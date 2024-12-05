@@ -31,7 +31,9 @@ public class Evento implements ActionListener {
             case CARGAR :
                 ventana.cargarInfoInventario();
                 break;
-
+            case VENTAS :
+                ventana.generarInformeVentasPorVendedor();
+                break;
             case CARGAR_VENTAS :
                 ventana.cargarInfoVentas();
                 break;
@@ -40,6 +42,12 @@ public class Evento implements ActionListener {
                 break;
             case SALIR:
                 ventana.salir();
+                break;
+            case MAS_VENDIDO:
+                ventana.generarReporteMasVendidos();
+                break;
+            case IMPUESTOS:
+                ventana.generarReporteImpuestos();
                 break;
             default:
                 System.out.println("No se puede ejecutar este evento "+ evento);

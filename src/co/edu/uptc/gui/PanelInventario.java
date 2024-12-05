@@ -11,14 +11,13 @@ public class PanelInventario extends JPanel {
 
     public PanelInventario(Evento evento) {
         //Establecer el laout para añadir componentes
-
         setLayout(new BorderLayout());
 
         //Anadir borde con titulo
-        setBorder(new TitledBorder("Linea Texto de Inventario:"));
+        setBorder(new TitledBorder("Inventario:"));
 
         //Parametro oara filas y columnas
-        txInformacion= new JTextArea(10,30);
+        txInformacion= new JTextArea(15,45);
 
         //Hacer el Jtexto no editable si solo es para mostrar informacion
         txInformacion.setEditable(false);
@@ -37,7 +36,12 @@ public class PanelInventario extends JPanel {
     }
 
     //Metodo para agregar texto
-    public String obtenerDatos() {
-        return txInformacion.getText();
+    public void agregarTexto(String texto) {
+        txInformacion.append(texto + "\n");
+    }
+
+    // Métodopara limpiar texto
+    public void limpiarTexto() {
+        txInformacion.setText("");
     }
 }

@@ -15,8 +15,8 @@ public class PanelPersona extends JPanel {
         setLayout(new BorderLayout());
 
         //añadir borde con titui
-        setBorder(new TitledBorder("Linea Texto de Personas:"));
-        txInformacion= new JTextArea(10,30);
+        setBorder(new TitledBorder("Informacion Personas:"));
+        txInformacion= new JTextArea(15,40);
         txInformacion.setEditable(false);
 
         //Agregar scroolPane para manjar texto largo
@@ -34,5 +34,9 @@ public class PanelPersona extends JPanel {
 
     public String obtenerDatos() {
         return txInformacion.getText();
+    }
+    // Métodopara limpiar el contenido del JTextArea
+    public void limpiarTexto() {
+        txInformacion.setText("");
     }
 }

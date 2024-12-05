@@ -17,7 +17,7 @@ public class PanelVentas extends JPanel {
         // Añadir borde con título
         setBorder(new TitledBorder("Linea Texto de Ventas:"));
         // Corregir dimensiones del JTextArea
-        txInformacion = new JTextArea(10, 30);
+        txInformacion = new JTextArea(10, 50);
 
         // Hacer el JTextArea no editable si solo es para mostrar información
         txInformacion.setEditable(false);
@@ -37,7 +37,12 @@ public class PanelVentas extends JPanel {
         add(accion1, BorderLayout.SOUTH);
     }
 
-    public String obtenerDatos() {
-        return txInformacion.getText();
+    public void agregarTexto(String texto) {
+        txInformacion.append(texto + "\n");
+    }
+
+    // Métodopara limpiar texto
+    public void limpiarTexto() {
+        txInformacion.setText("");
     }
 }
